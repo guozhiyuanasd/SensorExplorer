@@ -24,10 +24,10 @@ class SensorDetailActivity : AppCompatActivity(), SensorEventListener {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        title = intent.getStringExtra(EXTRA_SENSOR_NAME) ?: "传感器"
+        title = intent.getStringExtra(MainActivity.EXTRA_SENSOR_NAME) ?: "传感器"
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-        val type = intent.getIntExtra(EXTRA_SENSOR_TYPE, 0)
+        val type = intent.getIntExtra(MainActivity.EXTRA_SENSOR_TYPE, 0)
         sensor = sensorManager.getDefaultSensor(type)
 
         if (sensor == null) {
